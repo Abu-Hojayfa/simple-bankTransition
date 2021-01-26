@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Balance Checker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="mainPage">
+    <div class="loginPage" id="loginPage">
+      <h2 class="text-center">
+        Welcome to our Bank
+      </h2>
+      <div class="signIn  ">
+        <h3>
+          Login
+        </h3>
+        <input type="email" class="form-control" placeholder="Enter your mail">
+        <br>
+        <input type="password" class="form-control" placeholder="Enter your Password">
+        <br>
+        <button class="btn btn-success" id="login">
+          Login
+        </button>
+      </div>
+    </div>
+
+    <div id="depositArea">
+      <h2 class="text-center">
+        Your Bank-Balance
+      </h2>
+      <div class=" row d-flex align-items-center justify-content-center">
+        <div class="col-2 m-5  show1 ">
+          <div class="contain p-4 ">
+            <h3 class="m-2">
+              Deposit
+            </h3>
+            <h2 class="m-2">
+              $ <span id="addMoney">00</span></span>
+            </h2>
+          </div>
+        </div>
+        <div class="col-2 m-5  show2 ">
+          <div class="contain p-4">
+            <h3 class="m-2">
+              Withdraw
+            </h3>
+            <h2 class="m-2">
+              $ <span id="withAm">00</span>
+            </h2>
+          </div>
+        </div>
+        <div class="col-2 m-5  show3 ">
+          <div class="contain p-4">
+            <h3 class="m-2">
+              Balance
+            </h3>
+            <h2 class="m-2">
+              $ <span id="balance">1040</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class=" d-flex align-items-center justify-content-center">
+        <div class="w-25 tkjoma">
+          <h3>
+            Deposit
+          </h3>
+          <input type="text" id="tkPoriman" class="form-control" placeholder="$ enter the deposit amount">
+          <button class="btn btn-success mt-2" id="tkJoma">
+            Deposit
+          </button>
+        </div>
+        <div class="w-25 tkjoma">
+          <h3>
+            Withdraw
+          </h3>
+          <input type="text" class="form-control" id="withdrawAmount"
+            placeholder="$ enter the amount you want to withdraw">
+          <button class="btn btn-danger mt-2" id="withdraw">
+            Withdraw
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const logIn = document.getElementById("login");
+    logIn.addEventListener("click", () => {
+      document.getElementById("loginPage").style.display = "none";
+      document.getElementById("depositArea").style.display = "block";
+    })
+
+    // tk r khela suru
+    const depositAmount = document.getElementById("tkJoma").addEventListener("click", () => {
+      const amount = parseFloat(document.getElementById("tkPoriman").value);
+      const depositamount = parseFloat(document.getElementById("addMoney").innerText);
+      const newAmount = amount + depositamount;
+      document.getElementById("addMoney").innerText = newAmount;
+
+      const oldAmount = parseFloat(document.getElementById("balance").innerText);
+      const newBalance = oldAmount + amount;
+      document.getElementById("balance").innerText = newBalance;
+    });
+
+    // withdraw
+    const withdraw = document.getElementById("withdraw").addEventListener("click", () => {
+      const withdrawAmount = parseFloat(document.getElementById("withdrawAmount").value);
+      const withdrawRecord = parseFloat(document.getElementById("withAm").innerText);
+      const newWithAmount = withdrawRecord + withdrawAmount;
+      document.getElementById("withAm").innerText = newWithAmount;
+
+      const oldAmount = parseFloat(document.getElementById("balance").innerText);
+      const newBalance = oldAmount - withdrawAmount;
+      document.getElementById("balance").innerText = newBalance;
+    })
+  </script>
+
+</body>
+
+</html>

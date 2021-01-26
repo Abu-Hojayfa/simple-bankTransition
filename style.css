@@ -1,0 +1,55 @@
+.mainPage {
+  padding: 100px;
+}
+
+h2 {
+  margin-bottom: 100px;
+  font-size: 40px;
+}
+
+.signIn {
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px grey;
+}
+
+#depositArea {
+  display: none;
+}
+
+.show1 {
+  background-color: rgb(96, 240, 240);
+}
+
+.show2 {
+  background-color: rgb(245, 170, 157);
+}
+
+.show3 {
+  background-color: rgb(247, 187, 76);
+}
+
+.show1,
+.show2,
+.show3 {
+  border-radius: 10px;
+  color: rgb(43, 43, 43);
+}
+
+.contain {
+  margin: auto 5px;
+}
+
+.tkjoma:nth-child(2) {
+  margin-left: 200px;
+}
+
+.tkjoma {
+  margin-top: 25px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px grey;
+
+}
